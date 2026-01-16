@@ -141,6 +141,363 @@ Here are the supported callout keywords in Obsidian, grouped by their semantic p
 
 - **Frontmatter (YAML Properties):** A block at the very top of a note delimited by triple dashes `---` that stores document metadata.
 - **Bases (Native Tables):** A 2025/2026 core feature that allows for database-like table blocks, replacing the need for external plugins like Dataview for many users.
-- **Block Identifiers:** You can add a unique ID to any block by placing `^block-id` at the end of it, allowing you to link directly to that specific block from other notes.
+- **Block Identifiers:** You can add a unique ID to any block by placing `^block-id` at the end of it, allowing you to link directly to that specific block from other notes.^block-1
 - **Footnotes:** A specialized block defined at the bottom of a note using `[^1]: My note text`.
+
+- **Math and Diagrams**: Obsidian includes native support for specialized rendering engines that are common in technical documentation but technically "extensions":
+	- **LaTex**: Supports math blocks via `$...$` and `$$...$$`
+	- **Mermaid**: Supports diagrams within code blocks: 
+	
+## Diagrams
+https://www.youtube.com/watch?v=rXhUeV5Ko7g&list=PLSWNAxJuTT5HZN_kTsR_mrUKtJvfqTQmc
+### Pie Charts
+```Markdown
+	```mermaid
+# Pie chart
+pie title Users
+"Mobile": 55.9
+"Desktop": 40.1
+"Tablet": 4
+	```
+```
+
+```mermaid
+pie title Users
+"Mobile": 55.9
+"Desktop": 40.1
+"Tablet": 4
+```
+
+
+### Direction
+
+1. Top to Bottom
+```Markdown
+	```mermaid
+	graph TB
+	A-->B
+	```
+```
+```mermaid
+graph TD;
+	A-->B;
+```
+
+2. Bottom to top
+```Markdown
+	```mermaid
+	graph BT
+	A-->B
+	```
+```
+
+```mermaid
+graph BT
+A-->B
+```
+
+3. Left to Right
+```Markdown
+	```mermaid
+	graph LR
+	A-->B
+	```
+```
+
+```mermaid
+graph LR
+	A-->B
+```
+
+4. Right to Left
+
+```Markdown
+	```mermaid
+	graph RL
+	A-->B
+	```
+```
+```mermaid
+graph RL
+A-->B
+```
+
+### Shapes
+1. Normal Box
+```Markdown
+	```mermaid
+	graph TD
+	boxa[ Normal Box with text ]
+	```
+```
+
+```mermaid
+graph TD
+boxa[ Normal Box with Text ]
+```
+
+2. Pill Shaded Box
+```Markdown
+	```mermaid
+	graph TD
+	boxa([ Normal Box with Text ])
+	```
+```
+
+```mermaid
+graph TD
+boxa([ Normal Box with Text ])
+```
+
+3. Box with Rounded Edges
+```Markdown
+	```mermaid
+	graph TD
+	boxa(Normal Box with Text)
+	```
+```
+
+```mermaid
+graph TD
+boxa(Normal Box with Text)
+```
+
+4. Subroutine shaped-box
+```Markdown
+	```mermaid
+	graph TD
+	boxa[[normal box with text]]
+	```
+```
+
+```mermaid
+graph TD
+boxa[[normal box with text]]
+```
+5. Cylindrical shape
+```Markdown
+	```mermaid
+	graph TD
+	boxa[( text box )]
+	```
+```
+```mermaid
+graph TD
+
+boxa[( Normal Box with Text )]
+```
+
+```Markdown
+	```mermaid
+	graph LR
+	boxa[(Database A)]-->boxb[Database B]
+	```
+```
+```mermaid 
+graph LR 
+boxa[(Database A)] --> boxb[(Database B)]
+```
+6. Circles
+```Markdown
+	```mermaid
+	graph TD
+	boxa(( Normal Box with Text ))
+	```
+```
+```mermaid
+graph TD
+boxa(( Normal Box with Text))
+```
+
+7. Asymmetric Shape
+```Markdown
+	```mermaid
+	graph LR
+	boxa>Normal Box with Text]
+	```
+```
+```mermaid
+graph LR
+boxa>Normal Box with Text]
+```
+8. Rhombus
+```Markdown
+	```mermaid
+	graph LR
+	boxa{Normal Box with Text}
+	```
+```
+```mermaid 
+graph LR
+boxa{Normal Box with Text}
+```
+9. Hexagon
+```Markdown
+	```mermaid
+	graph LR
+	boxa{{Normal Box with Text}}
+	```
+```
+```mermaid 
+graph LR
+boxa{{Normal Box with Text}}
+```
+10. Parallelograms
+```Markdown
+	```mermaid
+	graph LR
+	boxa[/Normal Box with Text/]
+	```
+```
+```mermaid
+graph LR
+boxa[/Normal Box with Text/]
+```
+```Markdown
+	```mermaid
+	graph LR
+	boxa[\Normal Box with Text\]	
+	```
+```
+```mermaid
+graph LR
+	boxa[\Normal Box with Text\]
+```
+```Markdown
+	```mermaid
+	graph LR
+	boxa[/Normal Box with Text\]	
+	```
+```
+```mermaid
+graph LR
+	boxa[/Normal Box with Text\]
+```
+```Markdown
+	```mermaid
+	graph LR
+	boxa[\Normal Box with Text/]	
+	```
+```
+```mermaid
+graph LR
+	boxa[\Normal Box with Text/]
+```
+
+```Markdown
+	```mermaid
+	graph LR
+	boxa[\Normal Box with Text\]	
+	```
+```
+```mermaid
+graph LR
+	boxa[\Database\]
+```
+
+### Links
+1. Arrow head
+```Markdown
+	```mermaid
+	graph LR
+	A-->B
+	```
+```
+```mermaid
+graph LR
+A-->B
+```
+
+2. Open Link
+```Markdown
+	```mermaid
+	graph LR
+	A --- B
+	```
+```
+```mermaid 
+graph LR
+A --- B
+```
+3. Text on Link
+```Markdown
+	```mermaid
+	graph LR
+	A--Text here-->B
+	```
+```
+```mermaid
+graph LR
+A--Text here-->B
+```
+4. Dotted link
+```Markdown
+	```mermaid
+	graph LR
+	A-...->B
+	```
+```
+```mermaid
+graph LR
+A-...->B
+```
+```Markdown
+	```mermaid
+	graph LR
+	A-.Text here.->B
+	```
+```
+```mermaid
+graph LR
+A-.Text here.->B
+```
+5. Thick line
+```Markdown
+	```mermaid
+	graph LR
+	A==>B
+	```
+```
+```mermaid
+graph LR
+A==>B
+```
+```Markdown
+	```mermaid
+	graph LR
+	A==Text Here==>B
+	```
+```
+```mermaid
+graph LR
+A==Text here==>B
+```
+### Gantt Charts
+
+ ```Markdown
+	 ```mermaid
+	 title Productivity Guru Videos
+	 dateFormat DD-MM-YYYY
+	 section Obsidian Basics
+	 Markdown: al, 04-07-2020, 3d
+	 Diagrams: after a1, 07-07-2020, 2d
+	 section OtherVideos
+	 example Video: 01-07-2020, 5d
+	 ```
+ ```
+ ```mermaid
+ gantt
+ title Productivity Guru Videos
+ dateFormat DD-MM-YYYY
+ section Obsidian Basics
+ Markdown: a1, 04-07-2020, 3d
+ Diagrams: after a1, 07-07-2020, 2d
+ section OtherVideos
+ example Video: 01-07-2020, 5d
+ video2: 07-07-2020, 12d
+ section Planning
+ phase1: 07-09-2020, 1d  
+ ```
+
+## Sequence Diagrams
 
