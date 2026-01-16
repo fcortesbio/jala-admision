@@ -1,7 +1,7 @@
 # Admission Course - Jala University
-[Module 1: Fundamentals of Programming](/module-1/notes.md)
-Module 2: Object Oriented Programming
-Module 3: Admission Test
+[Module 1: Fundamentals of Programming](/module-1/menu.md)
+[Module 2: Object Oriented Programming](/module-2/menu.md)
+[Module 3: Admission Test](/module-3/menu.md)
 
 ## Class format: Asynchronous or Synchronous classes
 
@@ -30,6 +30,4 @@ Most be requested to the Admissions manager in your country
 - **Don't let doubts in the Parking Lot**: Resolve all questions with your trainer
 - **Reinforce your learning:** Leverage the availability of resources outside class
 - **Tooling matters:** Check your microphone and internet connection prior to all class sessions to ensure effective participation. 
-
-
 
